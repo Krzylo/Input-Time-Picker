@@ -199,7 +199,8 @@
     }
     
     
-    $(this).addClass("krz-set-hour");
+    $(this).addClass("krz-set-hour").css("letter-spacing","2px");
+    
     
 
     $(this).click(function() {
