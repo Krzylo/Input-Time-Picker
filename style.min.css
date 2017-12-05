@@ -1,0 +1,9 @@
+.krz-widget-content{position:relative;display:inline-block;overflow:hidden;padding:0;vertical-align:middle;line-height:8px;}
+.krz-spiner-button{color:#454545;text-decoration:none;width:100%;font-size:.9em;text-align:center;padding:0;margin:0;position:absolute;display:inline-block;margin-right:.1em;cursor:pointer;vertical-align:middle;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;overflow:visible;}
+.krz-widget-content-reset{position:absolute;top:5px;right:25px;height:50%;width:20px;border:1px solid #c5c5c5;border-radius:5px;background-color:red;}
+.krz-widget-content-up{position:absolute;top:1px;right:1px;height:35%;width:22px;border:1px solid #c5c5c5;border-radius:5px;background-color:lightgreen;display:block;}
+.krz-widget-content-down{position:absolute;bottom:1px;right:1px;height:35%;width:22px;border:1px solid #c5c5c5;border-radius:5px;background-color:lightgoldenrodyellow;}
+.krz-spinner-button-reset{top:1px;color:white;}
+.krz-spinner-button-up,.krz-spinner-button-down{width:100%;height:100%;}
+.krz-spinner-button-up span,.krz-spinner-button-down span,.krz-spinner-button-reset span{display:block;position:absolute;top:0px;padding-left:7px;}
+.krz-spinner-button-down span{padding-left:8px;font-weight:bolder;}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>jQuery Plugin Input Type=Time for IE and FireFox Browser</title>
+<meta http-equiv="Author" content="Krzysztof Zamojski" />
+<meta http-equiv="Description" content="jQuery Time Picker pligin for browsers that do not support the input type time field. Or for input type text for all browsers.
+" />
+<meta http-equiv="Keywords" content="jQuery, plugin, input, time" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+<script type="text/javascript" src="jquery.timepiker.js"></script>
+<script type="text/javascript" src="modernizr.js"></script>
+<link href="style.min.css" rel="stylesheet" type="text/css" />
+<script>
+  $(document).ready(function(){    
+    $("#time1").timepicker({showPicker: true, disableMenu: true, autoComplete: "off"});
+    $("#time2").timepicker({showPicker: true, disableMenu: false, autoComplete: "off"});
+    $("#time3").timepicker({showPicker: false, disableMenu: true, autoComplete: "off"});
+    
+    if ( ! Modernizr.inputtypes.time) {
+        // not-supported
+        //alert ("not-supported");
+        $(":input[type=time]").timepicker();
+    } else {
+      // supported
+      //alert ("supported");
+    }   
+  });
+</script>
+<style>
+ p.description {background-color: #8F8F8F; padding: 10px 50px ;}
+ p.code {background-color: #efefef; padding: 5px 50px;}
+ h3 {padding: 10px 20px; background-color:#a4a4a4;}
+</style>
+</head>
+<body>
+<h3>jQuery TimePicker pligin for browsers that do not support the input type="time" field</h3>
+<p class="code">
+<code>
+Add code in head tag <br />
+&lt script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" &gt&lt/script&gt<br />
+&lt script type="text/javascript" src="jquery.timepiker.js"&gt&lt/script&gt<br />
+&lt link href="style.min.css" rel="stylesheet" type="text/css" /&gt<br />
+
+&lt script &gt<br />
+  $(document).ready(function(){<br />
+    $(":input[type=text]").timepicker({ showPicker: true, // show buttons : reset, up, down ( true / false )<br />
+                                        disableMenu: true, // enable or disable contextmenu ( true / false )<br />
+                                        autoComplete: "off"}); // autoComplite ( off / on )<br />
+  });<br />
+&lt /script &gt
+</code><br />
+</p>
+<p class="description">
+<input type="text" name="timepicker1" id="time1" value="06:45" tabindex="1"/>
+</p>
+
+<p class="code">
+<code>
+For input type="time" we need to check if the browser supports this field, 
+for example use modernizr.js script.<br />
+In head tag add line:<br />
+&lt head &gt<br />
+. . .<br />
+&ltscript type="text/javascript" src="modernizr.js"&gt&lt/script&gt<br />
+. . .<br />
+&lt /head &gt<br />
+Check it<br />
+&lt script &gt<br />
+    $(document).ready(function(){<br />
+    if ( ! Modernizr.inputtypes.time ) {<br />
+        // not-supported<br />
+        $(":input[type=time]").timepicker();<br />
+    }  
+  });<br />
+&lt /script &gt<br />
+</code><br />
+</p>
+<p class="description">
+<input type="time" name="timepicker4" id="time4" value="08:30" tabindex="4"/>
+</p>
+<p class="code">
+<code>
+Enabled contextmenu<br />
+&lt script &gt<br />
+$(":input[type=text]").timepicker({showPicker: true, disableMenu: false, autoComplete: "off"});<br />
+&lt /script &gt
+</code><br />
+</p>
+<p class="description">
+<input type="text" name="timepicker2" id="time2" value="07:30" tabindex="2"/>
+</p>
+<p class="code">
+<code>
+Disabled buttons, Time is entering from the numeric keypad <br />
+&lt script &gt<br />
+$(":input[type=text]").timepicker({showPicker: false, disableMenu: true, autoComplete: "off"});<br />
+&lt /script &gt
+</code>
+</p>
+<p class="description">
+<input type="text" name="timepicker3" id="time3" value="08:30" tabindex="3"/>
+</p>
+</body> 
+</html>
